@@ -9,16 +9,19 @@ ToInlineCss.prototype.run = function() {
     var base = this;
 
     this.fs.readdir(this.beforePath, (err, files) => {
-        files.forEach(file => {
-            console.log('Reading file => ', file);
-            base.convert(file);
+        files.forEach(file => {        
+            if(!file.startsWith('.'))
+            {
+                console.log('Reading file => ', file);
+                base.convert(file);
+            };  
         });
     });
 };
 
 ToInlineCss.prototype.convert = function(file) {
     base = this;
-    this.fs.readFile(this.beforePath + file, 'utf8', function (err, html) {
+    this.fs.readFile(this.beforePath + file, 'utf8', (err, html) => {
         if (err) { return console.log(err); }
         
         var result = base.juice(html);
@@ -29,7 +32,7 @@ ToInlineCss.prototype.convert = function(file) {
 
 
 ToInlineCss.prototype.saveFile = function(path, data) {
-    this.fs.writeFile(path, data, function(err) {
+    this.fs.writeFile(path, data, (err) => {
         if(err) { return console.log(err); }
         console.log("The file was saved!");
     }); 
