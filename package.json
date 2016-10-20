@@ -1,0 +1,16 @@
+{
+  "name": "to-inline-mail",
+  "version": "1.0.0",
+  "description": "",
+  "main": "toInline.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.9.0",
+    "inline-css": "^2.2.2",
+    "juice": "^3.0.1"
+  }
+}
