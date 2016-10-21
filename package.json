@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "http-server": "^0.9.0",
-    "inline-css": "^2.2.2",
     "juice": "^3.0.1"
   }
 }
